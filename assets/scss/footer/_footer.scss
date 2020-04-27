@@ -1,0 +1,78 @@
+.footer {
+  background-color: $additional-color;
+
+  &-inner {
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include sm-min {
+      padding: 20px 65px;
+    }
+  }
+
+  &-nav {
+    margin-bottom: 45px;
+    text-transform: uppercase;
+    font-weight: 700;
+    display: flex;
+
+    @include xs-min {
+    }
+
+    @include xs {
+      flex-wrap: wrap;
+    }
+
+    &__link {
+      display: block;
+      text-decoration: none;
+      color: $color-primary;
+      transition: color 0.2s linear;
+
+      @include xs-min {
+        margin: 10px 20px 10px 20px;
+      }
+
+      @include xs {
+        font-size: 0.7rem;
+        margin: 10px 5px 10px 5px;
+      }
+
+      &:focus,
+      &:hover {
+        color: $color-accent;
+      }
+    }
+  }
+
+  &-soc {
+    &__icon {
+      display: inline-block;
+      width: 35px;
+      text-align: center;
+      font-size: 1.2rem;
+      padding: 6px 0;
+      border: 1px solid rgba($color: $color-primary, $alpha: 0.2);
+      border-radius: 50%;
+      background: radial-gradient(circle, rgb(253, 253, 253) 50%, rgb(180, 179, 179) 100%);
+      transition: color 0.2s linear, background-color 0.2s linear, border-color 0.2s linear;
+
+      &:focus,
+      &:hover {
+        color: $white-color;
+        background: $color-accent;
+        border-color: $color-accent;
+      }
+
+      &:not(:first-of-type) {
+        margin-left: 5px;
+      }
+    }
+  }
+  &-copyright {
+    margin-top: 20px;
+    font-weight: 700;
+  }
+}

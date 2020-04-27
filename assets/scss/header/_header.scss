@@ -1,0 +1,180 @@
+.header {
+  &-inner {
+    padding: 20px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    @include md-min {
+      padding: 20px 65px;
+    }
+  }
+
+  &-logo {
+    @include img-styles;
+    max-width: 100px;
+
+    @include md-min {
+      max-width: 150px;
+    }
+  }
+
+  &-nav {
+    position: relative;
+    text-transform: uppercase;
+    font-weight: 700;
+    list-style: none;
+    padding: 0;
+
+    @include sm {
+      order: 3;
+    }
+
+    &__hamburger {
+      width: 30px;
+      height: 22.5px;
+      position: relative;
+      transform: rotate(0deg);
+      transition: 0.5s ease-in-out;
+      cursor: pointer;
+
+      @include sm-min {
+        display: none;
+      }
+
+      span {
+        display: block;
+        position: absolute;
+        height: 3px;
+        width: 100%;
+        background: $color-light;
+        border-radius: 3px;
+        opacity: 1;
+        left: 0;
+        transform: rotate(0deg);
+        transition: 0.25s ease-in-out;
+
+        &:nth-child(1) {
+          top: 0px;
+        }
+
+        &:nth-child(2) {
+          top: 9px;
+        }
+
+        &:nth-child(3) {
+          top: 18px;
+        }
+      }
+
+      &.active span {
+        &:nth-child(1) {
+          top: 9px;
+          transform: rotate(135deg);
+        }
+
+        &:nth-child(2) {
+          opacity: 0;
+          left: -30px;
+        }
+
+        &:nth-child(3) {
+          top: 9px;
+          transform: rotate(-135deg);
+        }
+      }
+    }
+
+    &__list {
+      list-style: none;
+      margin: 0 -20px 0 0;
+      padding: 0;
+
+      @include sm-min {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      @include sm {
+        position: absolute;
+        z-index: 10;
+        top: 223%;
+        right: 5px;
+        background-color: $bg-light-color;
+      }
+
+      &.active {
+        display: block;
+      }
+    }
+
+    &__link {
+      display: block;
+      margin: 0 5px;
+      text-decoration: none;
+      color: $color-primary;
+      transition: color 0.2s linear;
+
+      @include md-min {
+        margin: 0 20px;
+      }
+
+      @include md {
+        margin: 0 20px;
+      }
+
+      @include sm {
+        padding: 20px;
+        display: none;
+        top: 100%;
+        text-align: right;
+      }
+
+      &:focus,
+      &:hover {
+        color: $color-accent;
+      }
+      &.active {
+        display: block;
+      }
+    }
+  }
+
+  &-social {
+    &__icon {
+      display: inline-block;
+
+      text-align: center;
+
+      border: 1px solid rgba($color: $color-primary, $alpha: 0.2);
+      border-radius: 50%;
+      background: radial-gradient(circle, rgb(253, 253, 253) 50%, rgb(180, 179, 179) 100%);
+      transition: color 0.2s linear, background-color 0.2s linear, border-color 0.2s linear;
+
+      @include sm-min {
+        width: 30px;
+        padding: 7px 0;
+      }
+
+      @include sm {
+        width: 24px;
+        padding: 3px 0;
+      }
+
+      &:focus,
+      &:hover {
+        color: $white-color;
+        background: $color-accent;
+        border-color: $color-accent;
+      }
+
+      &:not(:first-of-type) {
+        margin-left: 5px;
+      }
+    }
+    @include sm {
+      order: 2;
+    }
+  }
+}

@@ -1,0 +1,46 @@
+.contacts {
+  background: url("../images/bg-map.jpg") center no-repeat;
+
+  &-block {
+    margin-right: auto;
+    padding: 46px 30px;
+    color: $white-color;
+    background: linear-gradient(0deg, #f17251 0%, #ee3596 100%);
+
+    @include sm-min {
+      width: 24%;
+    }
+    @include sm-xs {
+      width: 30%;
+    }
+    @include xs {
+      width: 145px;
+    }
+
+    &__title {
+      margin: 0;
+      font-size: 1.5rem;
+      font-weight: 400;
+      font-family: $font-accent;
+    }
+
+    &__text {
+      margin: 25px 0 100px;
+    }
+
+    &-data {
+      &__icon {
+        display: inline-block;
+        width: 30px;
+        padding: 10px 0 10px 10px;
+        font-size: 1.3rem;
+        color: $color-primary;
+        background-color: $white-color;
+      }
+
+      &__info {
+        display: inline-block;
+      }
+    }
+  }
+}

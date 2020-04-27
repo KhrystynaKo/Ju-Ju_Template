@@ -1,0 +1,21 @@
+@import "../../libs/normalize-scss/sass/normalize/import-now";
+@import "variables";
+
+@import "mixins-media";
+@import "mixins";
+
+@import "common";
+@import "header/header";
+@import "header/intro";
+
+@import "main/main";
+@import "main/statistic";
+@import "main/table";
+@import "main/block-quote";
+@import "main/fruits";
+@import "main/info";
+@import "main/team";
+@import "main/shop-info";
+@import "main/contacts";
+
+@import "footer/footer";
